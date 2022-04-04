@@ -118,37 +118,38 @@ $(function() {
 });
 
 // Navigation
-  $('.nav-container').onePageNav({
-    scrollSpeed: 600,
-    currentClass: 'current',
-    changeHash: true,
-    filter: ':not(.external)'
-  });
+	$('.nav-container').onePageNav({
+		scrollSpeed: 600,
+		currentClass: 'current',
+		changeHash: true,
+		filter: ':not(.external)'
+	});
 
 //Header Class Change on Resize
-  var $window = $(window);
+	var $window = $(window);
 
-      // Function to handle changes to style classes based on window width
-      function checkWidth() {
-      if ($window.width() < 767) {
-          $('#top-header').removeClass('header-home').addClass('header-default');
-          };
+	// Function to handle changes to style classes based on window width
+	function checkWidth() {
+		if ($window.width() < 767) {
+			$('#top-header').removeClass('header-home').addClass('header-default');
+		};
 
-      if ($window.width() >= 767) {
-          $('#top-header').removeClass('header-default').addClass('header-home');
-      }
-  }
+		if ($window.width() >= 767) {
+			$('#top-header').removeClass('header-default').addClass('header-home');
+		}
+	}
 
-  // Execute on load
-  checkWidth();
+// Execute on load
+	checkWidth();
 
-  // Bind event listener
-      $(window).resize(checkWidth);
+// Bind event listener
+	$(window).resize(checkWidth);
 
+/*
 //Google Map
 //set your google maps parameters
-	var $latitude = 45.537383,
-		$longitude = -73.597623,
+	var $latitude = 35.66397185844708,
+		$longitude = 139.69416149627972,
 		$map_zoom = 14;
 
 	//google map custom marker icon - .png fallback for IE11
@@ -178,12 +179,12 @@ $(function() {
 		},
 		{
 			//don't show highways lables on the map
-	        featureType: 'road.highway',
-	        elementType: 'labels',
-	        stylers: [
-	            {visibility: "off"}
-	        ]
-	    }, 
+			featureType: 'road.highway',
+			elementType: 'labels',
+			stylers: [
+				{visibility: "off"}
+			]
+		}, 
 		{ 	
 			//don't show local road lables on the map
 			featureType: "road.local", 
@@ -333,47 +334,48 @@ $(function() {
 		
 	//set google map options
 	var map_options = {
-      	center: new google.maps.LatLng($latitude, $longitude),
-      	zoom: $map_zoom,
-      	panControl: false,
-      	zoomControl: false,
-      	mapTypeControl: false,
-      	streetViewControl: false,
-      	mapTypeId: google.maps.MapTypeId.ROADMAP,
-      	scrollwheel: false,
-      	styles: style,
+		center: new google.maps.LatLng($latitude, $longitude),
+		zoom: $map_zoom,
+		panControl: false,
+		zoomControl: false,
+		mapTypeControl: false,
+		streetViewControl: false,
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+		scrollwheel: false,
+		styles: style,
     }
     //inizialize the map
 	var map = new google.maps.Map(document.getElementById('google-container'), map_options);
 	//add a custom marker to the map				
 	var marker = new google.maps.Marker({
-	  	position: new google.maps.LatLng($latitude, $longitude),
-	    map: map,
-	    visible: true,
-	 	icon: $marker_url,
+		position: new google.maps.LatLng($latitude, $longitude),
+		map: map,
+		visible: true,
+		icon: $marker_url,
 	});
 
 	//add custom buttons for the zoom-in/zoom-out on the map
 	function CustomZoomControl(controlDiv, map) {
 		//grap the zoom elements from the DOM and insert them in the map 
-	  	var controlUIzoomIn= document.getElementById('cd-zoom-in'),
-	  		controlUIzoomOut= document.getElementById('cd-zoom-out');
-	  	controlDiv.appendChild(controlUIzoomIn);
-	  	controlDiv.appendChild(controlUIzoomOut);
+		var controlUIzoomIn= document.getElementById('cd-zoom-in'),
+			controlUIzoomOut= document.getElementById('cd-zoom-out');
+		controlDiv.appendChild(controlUIzoomIn);
+		controlDiv.appendChild(controlUIzoomOut);
 
 		// Setup the click event listeners and zoom-in or out according to the clicked element
 		google.maps.event.addDomListener(controlUIzoomIn, 'click', function() {
-		    map.setZoom(map.getZoom()+1)
+			map.setZoom(map.getZoom()+1)
 		});
 		google.maps.event.addDomListener(controlUIzoomOut, 'click', function() {
-		    map.setZoom(map.getZoom()-1)
+			map.setZoom(map.getZoom()-1)
 		});
 	}
 
 	var zoomControlDiv = document.createElement('div');
- 	var zoomControl = new CustomZoomControl(zoomControlDiv, map);
+	var zoomControl = new CustomZoomControl(zoomControlDiv, map);
 
   	//insert the zoom div on the top left of the map
-  	map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);
+map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);
+*/
 
 });
