@@ -96,7 +96,7 @@ ul {
 }
 .flex .image img {
     width: 100%;
-    height: 700px;
+    height: auto;
     object-fit: cover;
     vertical-align: bottom;
 }
@@ -112,7 +112,7 @@ ul {
 }
 .flex .recipe .content-title {
     border-bottom: solid 1px #ccc;
-    font-size: 1.25rem;
+    font-size: 1.0rem;
     padding-bottom: 5px;
     margin: 40px 0 15px 0;
 }
@@ -150,7 +150,7 @@ ul {
     }
     .flex .recipe {
         width: 100%;
-}
+    }
 }
 
 
