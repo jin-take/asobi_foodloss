@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body { 
+    background: rgba(255, 255, 255);
+    font-family: 'Train One';
+}
+
+
+/* *********************************************************
+Header
+********************************************************* */
+.top { 
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/food_loss_menu_01.svg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.top-title {
+    padding: 30vh;
+    height: 50vh;
+    color: #000;
+    font-family: 'Train One';
+}
+
+.top-title h1 {
+    text-align: center;
+    color: #000;
+    font-family: 'Train One';
+    font-weight:700;
+}
+
+.top-title p {
+    text-align: center;
+    color: #000;
+}
+
+
+/* *********************************************************
+Navigation
+********************************************************* */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+.navMenu {
+    position: absolute;
+    top: 70vh;
+    width: 100%;
+    text-align: center;
+    font-family: 'Train One';
+}
+
+.navMenu a {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    width: 200px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    font-family: 'Train One';
+}
+
+.navMenu a:hover {
+    color: pink;
+    font-family: 'Train One';
+    background:rgba(0, 0, 0);
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+/* *********************************************************
+Menu
+********************************************************* */
+img {
+    max-width: 100%;
+}
+ul {
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+    margin-bottom: 60px;
+}
+.flex .image {
+    width: 50%;
+}
+.flex .image img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    vertical-align: bottom;
+}
+.flex .recipe {
+    width: 50%;
+    padding: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.flex .recipe .page-title {
+    font-size: 1.75rem;
+    margin-bottom: 20px;
+}
+.flex .recipe .content-title {
+    border-bottom: solid 1px #ccc;
+    font-size: 1.25rem;
+    padding-bottom: 5px;
+    margin: 40px 0 15px 0;
+}
+.flex .recipe .ingredient-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.flex .recipe .ingredient-list dt {
+    width: 85%;
+    border-bottom: dotted 1px #ccc;
+    padding: 6px 0;
+}
+.flex .recipe .ingredient-list dd {
+    width: 15%;
+    border-bottom: dotted 1px #ccc;
+    padding: 6px 0;
+    text-align: right;
+}
+.flex .recipe .step-list li {
+    border-bottom: dotted 1px #ccc;
+    padding: 6px 0;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 834px) {
+    .flex {
+        flex-direction: column;
+    }
+    .flex .image {
+        width: 100%;
+    }
+
+    .flex .image img {
+        height: auto;
+    }
+    .flex .recipe {
+        width: 100%;
+}
+}
+
+
+
+/* *********************************************************
+Loader
+********************************************************* */
+
+.load-overlay {
+    width: 100%;
+    height: 100%;
+    background: #ECF0F1;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    z-index: 9999;
+}
+
+.load {
+    height: 50px;
+    left: 50%;
+    margin: -25px 0 0 -75px;
+    position: absolute;
+    top: 50%;
+    width: 150px;
+}
+.load .bar {
+    background-color: #c969bb;
+    font-size: 0;
+    height: 6px;
+    border-radius: 3px;
+    opacity: 0;
+    width: 25px;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: subtleIn;
+    -webkit-animation-timing-function: ease-in-out;
+    display: inline-block;
+}
+.load .bar:nth-child(1) {
+    -webkit-animation-delay: 0s;
+}
+.load .bar:nth-child(2) {
+    background-color: #bc1ab4;
+    -webkit-animation-delay: .3s;
+}
+.load .bar:nth-child(3) {
+    background-color: #bc1ab1;
+    -webkit-animation-delay: .6s;
+}
+.load .bar:nth-child(4) {
+    background-color: #ba10ba;
+    -webkit-animation-delay: .9s;
+}
+.load .bar:nth-child(5) {
+    background-color: #980084;
+    -webkit-animation-delay: 1.2s;
+}
+
+@-webkit-keyframes subtleIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(300%);
+        transform: translateY(300%);
+    }
+
+    30% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
